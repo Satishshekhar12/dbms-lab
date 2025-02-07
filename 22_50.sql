@@ -54,16 +54,15 @@ select i.name
 
 ### 33. List all students who have taken at least one course with every instructor in their department.  
 sele
-select s.name from student s
-where not exists(
-  select id from instructor 
-  where debt_name=s.debt_name
-  MINUS
-  select te from takes t 
-  join teaches te on t.course_id=te.course_id
-  where t.id=s.id
-);
-
+select s.id,s.name,s.debt_name
+  2  from student s
+  3  join takes t on s.id=t.id
+  4  join teaches ts on t.course_id =ts.course_id
+  5  join instructor i on ts.id =i.id and i.debt_name =s.debt_name 
+  6  group by s.id,s.name,s.debt_name
+  7  having count (distinct i.id)=(select count(distinct i2.id) from instructor i2
+  8  where i2.debt_name=s.debt_name);
+ working up
 or
 
 SELECT s.name 
