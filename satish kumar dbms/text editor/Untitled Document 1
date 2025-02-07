@@ -1,0 +1,159 @@
+des
+INSERT INTO classroom (building, room_number, capacity)
+VALUES
+('Main', '101', 50),
+('Main', '102', 30),
+('Main', '103', 60),
+('Main', '104', 40),
+('Main', '105', 45),
+('Main', '106', 35),
+('East', '200', 70),
+('East', '202', 25),
+('East', '203', 50),
+('East', '204', 40);
+
+INSERT INTO classroom VALUES ('Main', '102', 30) ;
+
+INSERT INTO classroom values ('East', '201', 70);
+
+
+INSERT INTO department VALUES ('Computer Science', 'Main', 500000.00);
+INSERT INTO department VALUES ('Mathematics', 'East', 300000.00);
+INSERT INTO department VALUES ('AI', 'East', 200000.00);
+INSERT INTO department VALUES ('Physics', 'Main', 250000.00);
+INSERT INTO department VALUES ('Chemistry', 'East', 280000.00);
+INSERT INTO department VALUES ('Biology', 'East', 210000.00);
+INSERT INTO department VALUES ('Electrical', 'Main', 400000.00);
+INSERT INTO department VALUES ('Mechanical', 'Main', 350000.00);
+INSERT INTO department VALUES ('Civil', 'East', 320000.00);
+INSERT INTO department VALUES ('Environmental', 'Main', 150000.00);
+
+
+INSERT INTO course VALUES ('MA607', 'Database Management Systems', 'Computer Science', 3);
+INSERT INTO course VALUES ('MA609', 'Object Oriented Programming', 'Computer Science', 3);
+INSERT INTO course VALUES ('MA649', 'Machine Learning', 'AI', 3);
+INSERT INTO course VALUES ('MA610', 'DSA Lab using OOP Concept', 'Computer Science', 2);
+INSERT INTO course VALUES ('MA611', 'Database Management Systems Lab', 'Computer Science', 2);
+INSERT INTO course VALUES ('MA606', 'Data Structures and Algorithms', 'Computer Science', 3);
+INSERT INTO course VALUES ('MA608', 'Computational Mathematics', 'Mathematics', 3);
+INSERT INTO course VALUES ('MA700', 'Advanced Databases', 'Computer Science', 3);
+INSERT INTO course VALUES ('MA702', 'Artificial Intelligence', 'AI', 3);
+INSERT INTO course VALUES ('MA705', 'Advanced Mathematics for Computing', 'Mathematics', 3);
+
+
+INSERT INTO instructor VALUES ('I001', 'Dr. Pushpajit Khaire', 'Computer Science', 75000.00);
+INSERT INTO instructor VALUES ('I002', 'Dr. Hamsa Ajay Bhat', 'Computer Science', 75000.00);
+INSERT INTO instructor VALUES ('I003', 'Nandagopal S. A', 'AI', 75000.00);
+INSERT INTO instructor VALUES ('I004', 'Mr. Karuppasamy S', 'Computer Science', 75000.00);
+INSERT INTO instructor VALUES ('I005', 'Bibekananda Sitha', 'Computer Science', 75000.00);
+INSERT INTO instructor VALUES ('I006', 'Dr. Mahima', 'Computer Science', 75000.00);
+INSERT INTO instructor VALUES ('I007', 'Dr. Amit Kumar', 'Mathematics', 75000.00);
+INSERT INTO instructor VALUES ('I008', 'Dr. Neelam Singh', 'Physics', 75000.00);
+INSERT INTO instructor VALUES ('I009', 'Dr. Sandeep Sharma', 'Mathematics', 75000.00);
+INSERT INTO instructor VALUES ('I010', 'Dr. Priya Chatterjee', 'Chemistry', 75000.00);
+
+
+
+
+INSERT INTO section VALUES ('MA607', '001', 'Fall', 2025, 'main', '101', 'T1');
+INSERT INTO section VALUES ('MA609', '002', 'Spring', 2025, 'East', '200', 'T2');
+INSERT INTO section VALUES ('MA649', '003', 'Fall', 2025, 'main', '102', 'T3');
+INSERT INTO section VALUES ('MA610', '004', 'Winter', 2025, 'main', '103', 'T4');
+INSERT INTO section VALUES ('MA611', '005', 'Spring', 2025, 'main', '104', 'T5');
+INSERT INTO section VALUES ('MA606', '006', 'Fall', 2025, 'East', '202', 'T6');
+INSERT INTO section VALUES ('MA608', '007', 'Spring', 2025, 'main', '103', 'T7');
+INSERT INTO section VALUES ('MA700', '008', 'Fall', 2025, 'East', '203', 'T1');
+INSERT INTO section VALUES ('MA702', '009', 'Spring', 2025, 'main', '105', 'T2');
+INSERT INTO section VALUES ('MA705', '010', 'Winter', 2025, 'East', '204', 'T3');
+
+
+
+
+INSERT INTO teaches VALUES ('I001', 'MA607', '001', 'Fall', 2025);
+INSERT INTO teaches VALUES ('I002', 'MA609', '002', 'Spring', 2025);
+INSERT INTO teaches VALUES ('I003', 'MA649', '003', 'Fall', 2025);
+INSERT INTO teaches VALUES ('I004', 'MA610', '004', 'Winter', 2025);
+INSERT INTO teaches VALUES ('I005', 'MA611', '005', 'Spring', 2025);
+INSERT INTO teaches VALUES ('I006', 'MA606', '006', 'Fall', 2025);
+INSERT INTO teaches VALUES ('I007', 'MA608', '007', 'Spring', 2025);
+INSERT INTO teaches VALUES ('I008', 'MA700', '008', 'Fall', 2025);
+INSERT INTO teaches VALUES ('I009', 'MA702', '009', 'Spring', 2025);
+INSERT INTO teaches VALUES ('I010', 'MA705', '010', 'Winter', 2025);
+
+
+
+
+INSERT INTO student VALUES ('S001', 'Satish', 'Computer Science', 15);
+INSERT INTO student VALUES ('S002', 'Harsh', 'Computer Science', 12);
+INSERT INTO student VALUES ('S003', 'Sourav', 'AI', 10);
+INSERT INTO student VALUES ('S004', 'Deeksha', 'Computer Science', 18);
+INSERT INTO student VALUES ('S005', 'Sunil', 'Mathematics', 6);
+INSERT INTO student VALUES ('S006', 'Shruti', 'Computer Science', 20);
+INSERT INTO student VALUES ('S007', 'Apurv', 'Computer Science', 14);
+INSERT INTO student VALUES ('S008', 'Ravi', 'AI', 17);
+INSERT INTO student VALUES ('S009', 'Anjali', 'Mathematics', 22);
+INSERT INTO student VALUES ('S010', 'Priya', 'Physics', 8);
+
+
+
+INSERT INTO takes VALUES ('S001', 'MA607', '001', 'Fall', 2025, 'A');
+INSERT INTO takes VALUES ('S002', 'MA609', '002', 'Spring', 2025, 'B');
+INSERT INTO takes VALUES ('S003', 'MA649', '003', 'Fall', 2025, 'A');
+INSERT INTO takes VALUES ('S004', 'MA610', '004', 'Winter', 2025, 'B');
+INSERT INTO takes VALUES ('S005', 'MA611', '005', 'Spring', 2025, 'C');
+INSERT INTO takes VALUES ('S006', 'MA606', '006', 'Fall', 2025, 'A');
+INSERT INTO takes VALUES ('S007', 'MA608', '007', 'Spring', 2025, 'A');
+INSERT INTO takes VALUES ('S008', 'MA700', '008', 'Fall', 2025, 'A');
+INSERT INTO takes VALUES ('S009', 'MA702', '009', 'Spring', 2025, 'B');
+INSERT INTO takes VALUES ('S010', 'MA705', '010', 'Winter', 2025, 'C');
+
+
+
+INSERT INTO advisor VALUES ('S001', 'I001');
+INSERT INTO advisor VALUES ('S002', 'I002');
+INSERT INTO advisor VALUES ('S003', 'I003');
+INSERT INTO advisor VALUES ('S004', 'I004');
+INSERT INTO advisor VALUES ('S005', 'I005');
+INSERT INTO advisor VALUES ('S006', 'I006');
+INSERT INTO advisor VALUES ('S007', 'I007');
+INSERT INTO advisor VALUES ('S008', 'I008');
+INSERT INTO advisor VALUES ('S009', 'I009');
+INSERT INTO advisor VALUES ('S010', 'I010');
+
+
+
+
+
+
+INSERT INTO time_slot VALUES ('T1', 'M', 9, 0, 10, 0);
+INSERT INTO time_slot VALUES ('T2', 'T', 10, 30, 11, 30);
+INSERT INTO time_slot VALUES ('T3', 'W', 12, 0, 13, 0);
+INSERT INTO time_slot VALUES ('T4', 'R', 13, 30, 14, 30);
+INSERT INTO time_slot VALUES ('T5', 'F', 15, 0, 16, 0);
+INSERT INTO time_slot VALUES ('T6', 'M', 16, 30, 17, 30);
+INSERT INTO time_slot VALUES ('T7', 'T', 18, 0, 19, 0);
+INSERT INTO time_slot VALUES ('T8', 'W', 9, 30, 10, 30);
+INSERT INTO time_slot VALUES ('T9', 'R', 10, 0, 11, 0);
+INSERT INTO time_slot VALUES ('T10', 'F', 14, 0, 15, 0);
+
+
+
+
+
+INSERT INTO prereq VALUES ('MA607', 'MA606');
+INSERT INTO prereq VALUES ('MA609', 'MA606');
+INSERT INTO prereq VALUES ('MA649', 'MA607');
+INSERT INTO prereq VALUES ('MA610', 'MA606');
+INSERT INTO prereq VALUES ('MA611', 'MA607');
+INSERT INTO prereq VALUES ('MA700', 'MA606');
+INSERT INTO prereq VALUES ('MA702', 'MA649');
+INSERT INTO prereq VALUES ('MA705', 'MA702');
+INSERT INTO prereq VALUES ('MA700', 'MA649');
+INSERT INTO prereq VALUES ('MA705', 'MA700');
+
+
+
+
+
+
+

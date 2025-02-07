@@ -1,0 +1,143 @@
+-- Insert data for classrooms (Main and East buildings)
+INSERT INTO classroom (building, room_number, capacity)
+VALUES
+('Main', '101', 50),
+('Main', '102', 30),
+('Main', '103', 60),
+('Main', '104', 40),
+('Main', '105', 45),
+('Main', '106', 35),
+('East', '201', 70),
+('East', '202', 25),
+('East', '203', 50),
+('East', '204', 40);
+
+-- Insert data for departments (Main and East buildings)
+INSERT INTO department (dept_name, building, budget)
+VALUES
+('Computer Science', 'Main', 500000.00),
+('Mathematics', 'East', 300000.00),
+('AI & ML', 'East', 200000.00),
+('Physics', 'Main', 250000.00),
+('Chemistry', 'East', 280000.00),
+('Biology', 'East', 210000.00),
+('Electrical Engineering', 'Main', 400000.00),
+('Mechanical Engineering', 'Main', 350000.00),
+('Civil Engineering', 'East', 320000.00),
+('Environmental Science', 'Main', 150000.00);
+
+-- Insert data for courses (credits 3 for regular, 2 for labs)
+INSERT INTO course (course_id, title, dept_name, credits)
+VALUES
+('MA607', 'Database Management Systems', 'Computer Science', 3),
+('MA609', 'Object Oriented Programming', 'Computer Science', 3),
+('MA649', 'Machine Learning', 'AI & ML', 3),
+('MA610', 'DSA Lab using OOP Concept', 'Computer Science', 2),
+('MA611', 'Database Management Systems Lab', 'Computer Science', 2),
+('MA606', 'Data Structures and Algorithms', 'Computer Science', 3),
+('MA608', 'Computational Mathematics', 'Mathematics', 3),
+('MA700', 'Advanced Databases', 'Computer Science', 3),
+('MA702', 'Artificial Intelligence', 'AI & ML', 3),
+('MA705', 'Advanced Mathematics for Computing', 'Mathematics', 3);
+
+-- Insert data for instructors (uniform salary)
+INSERT INTO instructor (ID, name, dept_name, salary)
+VALUES
+('I001', 'Dr. Pushpajit Khaire', 'Computer Science', 75000.00),
+('I002', 'Dr. Hamsa Ajay Bhat', 'Computer Science', 75000.00),
+('I003', 'Nandagopal S. A', 'AI & ML', 75000.00),
+('I004', 'Mr. Karuppasamy S', 'Computer Science', 75000.00),
+('I005', 'Bibekananda Sitha', 'Computer Science', 75000.00),
+('I006', 'Dr. Mahima', 'Computer Science', 75000.00),
+('I007', 'Dr. Amit Kumar', 'Mathematics', 75000.00),
+('I008', 'Dr. Neelam Singh', 'Physics', 75000.00),
+('I009', 'Dr. Sandeep Sharma', 'Mathematics', 75000.00),
+('I010', 'Dr. Priya Chatterjee', 'Chemistry', 75000.00);
+
+-- Insert data for sections (using Main and East rooms)
+INSERT INTO section (course_id, sec_id, semester, year, building, room_number, time_slot_id)
+VALUES
+('MA607', '001', 'Fall', 2025, 'Main', '101', 'T1'),
+('MA609', '002', 'Spring', 2025, 'East', '201', 'T2'),
+('MA649', '003', 'Fall', 2025, 'Main', '102', 'T3'),
+('MA610', '004', 'Winter', 2025, 'Main', '103', 'T4'),
+('MA611', '005', 'Spring', 2025, 'Main', '104', 'T5'),
+('MA606', '006', 'Fall', 2025, 'East', '202', 'T6'),
+('MA608', '007', 'Spring', 2025, 'Main', '103', 'T7'),
+('MA700', '008', 'Fall', 2025, 'East', '203', 'T1'),
+('MA702', '009', 'Spring', 2025, 'Main', '105', 'T2'),
+('MA705', '010', 'Winter', 2025, 'East', '204', 'T3');
+
+-- Insert data for teaches (assign instructors to courses)
+INSERT INTO teaches (ID, course_id, sec_id, semester, year)
+VALUES
+('I001', 'MA607', '001', 'Fall', 2025),
+('I002', 'MA609', '002', 'Spring', 2025),
+('I003', 'MA649', '003', 'Fall', 2025),
+('I004', 'MA610', '004', 'Winter', 2025),
+('I005', 'MA611', '005', 'Spring', 2025),
+('I006', 'MA606', '006', 'Fall', 2025),
+('I007', 'MA608', '007', 'Spring', 2025),
+('I008', 'MA700', '008', 'Fall', 2025),
+('I009', 'MA702', '009', 'Spring', 2025),
+('I010', 'MA705', '010', 'Winter', 2025);
+
+-- Insert data for students (random names and total credits)
+INSERT INTO student (ID, name, dept_name, tot_cred)
+VALUES
+('S001', 'Satish', 'Computer Science', 15),
+('S002', 'Harsh', 'Computer Science', 12),
+('S003', 'Sourav', 'AI & ML', 10),
+('S004', 'Deeksha', 'Computer Science', 18),
+('S005', 'Sunil', 'Mathematics', 6),
+('S006', 'Shruti', 'Computer Science', 20),
+('S007', 'Apurv', 'Computer Science', 14),
+('S008', 'Ravi', 'AI & ML', 17),
+('S009', 'Anjali', 'Mathematics', 22),
+('S010', 'Priya', 'Physics', 8);
+
+-- Insert data for takes (assigning courses to students)
+INSERT INTO takes (ID, course_id, sec_id, semester, year, grade)
+VALUES
+('S001', 'MA607', '001', 'Fall', 2025, 'A'),
+('S002', 'MA609', '002', 'Spring', 2025, 'B'),
+('S003', 'MA649', '003', 'Fall', 2025, 'A'),
+('S004', 'MA610', '004', 'Winter', 2025, 'B'),
+('S005', 'MA611', '005', 'Spring', 2025, 'C'),
+('S006', 'MA606', '006', 'Fall', 2025, 'A'),
+('S007', 'MA608', '007', 'Spring', 2025, 'A'),
+('S008', 'MA700', '008', 'Fall', 2025, 'A'),
+('S009', 'MA702', '009', 'Spring', 2025, 'B'),
+('S010', 'MA705', '010', 'Winter', 2025, 'C');
+
+-- Insert data for advisor (assigning advisors to students)
+INSERT INTO advisor (s_ID, i_ID)
+VALUES
+('S001', 'I001'),
+('S002', 'I002'),
+('S003', 'I003'),
+('S004', 'I004'),
+('S005', 'I005'),
+('S006', 'I006'),
+('S007', 'I007'),
+('S008', 'I008'),
+('S009', 'I009'),
+('S010', 'I010');
+
+-- Insert data for time_slots (common schedule for courses)
+INSERT INTO time_slot (time_slot_id, day, start_hr, start_min, end_hr, end_min)
+VALUES
+('T1', 'M', 9, 0, 10, 0),
+('T2', 'T', 10, 30, 11, 30),
+('T3', 'W', 12, 0, 13, 0),
+('T4', 'R', 13, 30, 14, 30),
+('T5', 'F', 15, 0, 16, 0),
+('T6', 'M', 16, 30, 17, 30),
+('T7', 'T', 18, 0, 19, 0),
+('T8', 'W', 9, 30, 10, 30),
+('T9', 'R', 10, 0, 11, 0),
+('T10', 'F', 14, 0, 15, 0);
+
+-- Insert data for prerequisites (course dependencies)
+
+
