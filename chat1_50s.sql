@@ -1,8 +1,8 @@
-Here are the remaining queries (31-50):
+-- Here are the remaining queries (31-50):
 
 ---
 
-### 31. Find the names of students who have taken all courses offered by the "Computer Science" department.  
+-- ### 31. Find the names of students who have taken all courses offered by the "Computer Science" department.  
 ```sql
 SELECT s.name 
 FROM student s 
